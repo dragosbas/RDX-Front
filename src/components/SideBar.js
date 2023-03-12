@@ -75,7 +75,7 @@ const SideBar = () => {
           
           (companyMode ?
             <div className="nav">
-              <span className='nav__item ' onClick={() => setCompanyMode(false)}>
+              <span className='nav__item ' onClick={() => setCompanyMode(false) && setCurrentMainPage('Profile')}>
                 <div className='nav__icons'>
                   <MdAddBusiness />
                 </div>
@@ -83,7 +83,7 @@ const SideBar = () => {
               </span>
             </div>
             : <div className="nav">
-              <span className='nav__item ' onClick={() => setCompanyMode(true)}>
+              <span className='nav__item ' onClick={() => setCompanyMode(true) && setCurrentMainPage('CompanyPage')}>
                 <div className='nav__icons'>
                   <MdAddBusiness />
                 </div>

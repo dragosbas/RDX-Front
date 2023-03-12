@@ -2,7 +2,6 @@ import Home from './pages/Home'
 import { AuthContext } from './context/AuthContext';
 import { useContext, useEffect, } from 'react'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
-import LoginPage from './pages/LoginPage';
 import { authLocalState } from './state';
 import { useAtom } from 'jotai';
 import SignIn from './pages/SignIn';

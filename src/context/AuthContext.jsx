@@ -19,7 +19,7 @@ export const AuthContextProvider = ({ children }) => {
         // setCurrentUser({ ...loginResponse.data })
 
         setCurrentUser(jwtDecode(token))
-        axiosInstance.defaults.headers.common['Authorization'] = `BEARER ${token}`
+        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${token}`
       }
       catch (e) {
         signOut()
@@ -34,7 +34,7 @@ export const AuthContextProvider = ({ children }) => {
       const userCredentials = await axiosInstance.post('/user/login', requestBody);
       setJwtTokenAtom(userCredentials['data'])
       setCurrentUser(jwtDecode(userCredentials['data']))
-      axiosInstance.defaults.headers.common['Authorization'] = `BEARER ${userCredentials['data']}`
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${userCredentials['data']}`
     }
     catch (e) { console.log(e) }
   }
@@ -45,7 +45,7 @@ export const AuthContextProvider = ({ children }) => {
       const userCredentials = await axiosInstance.post('/user/register', requestBody);
       setJwtTokenAtom(userCredentials['data'])
       setCurrentUser(jwtDecode(userCredentials['data']))
-      axiosInstance.defaults.headers.common['Authorization'] = `BEARER ${userCredentials['data']}`
+      axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${userCredentials['data']}`
     }
     catch (e) { console.log(e) }
     
@@ -62,7 +62,7 @@ export const AuthContextProvider = ({ children }) => {
 
 
   const signOut = () => {
-    axiosInstance.defaults.headers.common['Authorization'] = `BEARER `
+    axiosInstance.defaults.headers.common['Authorization'] = `Bearer `
     setJwtTokenAtom(null)
     setCurrentUser(null)
   };
