@@ -6,7 +6,7 @@ import axiosInstance from "../helpers/axios";
 
 const RegisterContractForm = () => {
 
-      const [user] = useAtom(userState.currentUser);
+    const [user] = useAtom(userState.currentUser);
 
   const [formData, setFormData] = useState({
     profileText: "",
