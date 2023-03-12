@@ -10,7 +10,6 @@ export const AuthContextProvider = ({ children }) => {
   const [currentUser, setCurrentUser] = useAtom(userState.currentUser);
   const [, setJwtTokenAtom] = useAtom(authLocalState.jwtTokenAtom)
 
-
   const signInWithToken = (token) => {
     const fetchData = async () => {
       console.log(jwtDecode(token))
@@ -52,6 +51,16 @@ export const AuthContextProvider = ({ children }) => {
     
   }
 
+  const updateProfile = async (formFields)=>{
+    try {
+      const requestBody = formFields
+      await axiosInstance.put('/user/update', requestBody);
+      setCurrentUser(formFields)
+    }
+    catch (e) { console.log(e) }
+    }
+
+
   const signOut = () => {
     axiosInstance.defaults.headers.common['Authorization'] = `BEARER `
     setJwtTokenAtom(null)
@@ -59,7 +68,7 @@ export const AuthContextProvider = ({ children }) => {
   };
 
   return (
-    <AuthContext.Provider value={{ currentUser, singInWithBackend, signOut,signInWithToken,signUpWithBackend }}>
+    <AuthContext.Provider value={{ currentUser, singInWithBackend, signOut,signInWithToken,signUpWithBackend,updateProfile }}>
       {children}
     </AuthContext.Provider>
   )

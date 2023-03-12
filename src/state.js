@@ -10,7 +10,7 @@ const mockdata = null
 const formErrors=atom({"loginForm":"","signup":""})
 
 
-const currentMainPage = atom('ChatView')
+const currentMainPage = atom('Profile')
 const currentUser = atom(null)
 const chatBots = atom(mockdata?mockdata['chatbots']:{})
 const conversations = atom(mockdata?mockdata['conversations']:{})

@@ -30,7 +30,6 @@ const SideBar = () => {
     window.sessionStorage.clear()
   }
 
-
   return (
     <section className={` ${open ? "w-72" : "w-20 "} sidebar`}>
       <div className="sidebar__app-bar">
