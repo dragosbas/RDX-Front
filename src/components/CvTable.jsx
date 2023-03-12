@@ -20,7 +20,8 @@ function CvTable({ data, setCurrentShownUser }) {
       <tr key={item.id} onClick={() => setCurrentShownUser(data.find(cur => cur.id === item.id))}>
         <td className="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{item.name}</td>
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.email}</td>
-        <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.phoneNr}</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.phoneNr}</td>
+            <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.verified}</td>
         <td className="px-6 py-4 whitespace-nowrap text-sm text-gray-500">{item.cosineSimilarity}</td>
       </tr>
     ))}
