@@ -5,7 +5,7 @@ import { useAtom } from 'jotai';
 import { userState } from '../state';
 import ProfilePage from '../components/ProfilePage';
 import CompanyRegistration from '../components/CompanyRegistration';
-import Contracts from '../components/Contracts';
+// import Contracts from '../components/Contracts';
 import CompanyPage from './CompanyPage';
 
 const Home = () => {

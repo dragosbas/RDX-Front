@@ -5,7 +5,7 @@ function CompanyPage() {
 
     const getMyContracts = async () => {
         try {
-          const req = await axiosInstance.get("/contract/my-contracts");
+          const req = await axiosInstance.get("/contract/my-contracts",{});
           const data = req.data;
           console.log(data);
         } catch (error) {
