@@ -1,8 +1,5 @@
-import { useAtom } from 'jotai';
 import React from 'react'
 import RegisterContractForm from '../forms/RegisterContractForm'
-import axiosInstance from '../helpers/axios';
-import { userState } from '../state';
 
 function Contracts() {
 
